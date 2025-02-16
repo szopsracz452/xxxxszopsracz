@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>mDowód</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+<div id="mainik">
+
+
+    <!-- Navbar -->
+    <div class="navbar" id="navbar">
+        <div class="back-arrow"><img id="strzala" src="zdjecia/strzala.png"></div>
+        <div class="title">mDowód</div>
+        <div class="spacer"></div>
+    </div>
+    <div id="timer">
+        <p class="label" id="czas"></p>
+    </div>
+
+
+    <!-- Karta mDowodu -->
+    <div class="card">
+            <div class="card-header">
+                <img src="zdjecia/user.jpg" alt="Zdjęcie twarzy" id="photo">  
+                <div id="nimated-flag"></div>
+                <div id="holo">
+                <div id="emblem"></div>
+                <p id="rzeczpos">Reczpospolita<br>Polska</p>
+                </div>
+            </div>
+            
+            <div class="card-info">
+                <div class="dany">
+                    <h2>Artur</h2>
+                    <p class="label">Imię (Imiona)</p>
+                </div>
+                <div class="dany">
+                    <h2>Morgieł</h2>
+                    <p class="label">Nazwisko</p>
+                </div>
+                <div class="dany">
+                    <h2>POLSKIE</h2>
+                    <p class="label">Obywatelstwo</p>
+                </div>
+                <div class="dany">
+                    <h2>26-02-2006</h2>
+                    <p class="label">Data urodzenia</p>
+                </div>
+                <div class="dany">
+                    <h2>06260301179</h2>
+                    <p class="label">Numer PESEL</p>
+                </div>
+            </div>
+    </div>
+    <div id="potwierdzenie">
+        <img src="zdjecia/zielonyTick.png" id="zielonyTick">
+        <h2>Dokument ważny</h2>
+    </div>
+  
+    <!-- Przyciski -->
+    <div class="buttons">
+        <div class="button">
+            <img class="buttonIcon" src="zdjecia/blueTick.png">
+            <p>Potwierdź swoje dane</p>
+            <img class="buttonArrow" src="zdjecia/sidearrow.png" onclick="potwierdzDane()">
+        </div>
+        <div class="button">
+            <img class="buttonIcon" src="zdjecia/idLogo.png">
+            <p>Dane dokumentu</p>
+            <img id="btnDaneDoku" class="buttonArrow" src="zdjecia/sidearrow.png" onclick="otworzDane()">
+        </div>
+        <div id="dodatkoweDaneDiv" class="button">
+            <p id="pDodatkoweDane">Twoje dodatkowe dane</p>
+            <img id="twojeDodatkoweDane" class="buttonArrow" src="zdjecia/sidearrow.png" onclick="twojeDodatkoweDane()">
+            <div id="dodatkoweDane">
+                <p class="pDodatkowe">Pesel</p>
+                <h3 class="h3dodatkowe">06261301179</h3>
+                <hr>
+
+                <p class="pDodatkowe">Adres zamieszkania</p>
+                <h3 class="h3dodatkowe">Agrowa 25</h3>
+                <hr>
+
+                <p class="pDodatkowe">Miasto</p>
+                <h3 class="h3dodatkowe">Gdańsk</h3>
+                <hr>
+
+                <p class="pDodatkowe">Nazwsiko rodowe ojca</p>
+                <h3 class="h3dodatkowe">Morgieł</h3>
+                <hr>
+
+                <p class="pDodatkowe">Nazwisko rodowe matki</p>
+                <h3 class="h3dodatkowe">Abramowicz</h3>
+                <hr>
+
+                <p class="pDodatkowe">Organ wydający</p>
+                <h3 class="h3dodatkowe">Prezydent miasta Gdańsk</h3>
+                <hr>
+
+                <p class="pDodatkowe">Data wydania</p>
+                <h3 class="h3dodatkowe">2024-06-12</h3>
+                <hr>
+
+                <p class="pDodatkowe">Termin ważności</p>
+                <h3 class="h3dodatkowe">2034-06-12</h3>
+                
+            </div>
+        </div>
+        <div class="buttondane">
+            <div>
+                <p>Ostatnia aktualizacja</p>
+                <h4 id="ostatniaAktu">2025-01-27</h4>
+            </div>
+                <button id="aktualizuj">Aktualizuj</button>
+            
+        </div>
+    </div>
+</div>
+<div id="DaneDokumentu">
+    <h3>Wybierz dokument</h3>
+    <div class="wyboryDoku">
+        <h2>Dowód Osobisty</h2>
+        <p class="label2">Zobaczysz tutaj dane swojego dowodu osobistego. Ale jeśli chcesz potwirdzić tożsamość, potrzebujesz fizycznego dokumentu.</p>
+        <button id="PokazDane" onclick="pokazDane()">Pokaż dane</button>
+    </div>
+    <div class="wyboryDoku" id="asdfg">
+        <h2>mDowód</h2>
+        <p class="label2">Nie używaj danych mDowodu w banku (do 31 sierpnia), gdy wyjeżdżasz za granicę lub składasz wniosek o dowód osobisty.</p>
+        <button id="PokazDaneMDowod" onclick="pokazDaneMDowod()">Pokaż dane</button>
+    </div>
+    <button id="zamknijDaneDokumentu" onclick="zamknijDane()">Zamknij</button>
+</div>
+
+<div id="potwierdzDane">
+    <h3>Potwierdź swoje dane</h3>
+    <img src="zdjecia/wifi.png" id="wifi">
+    <p>Brak połącznie z internetem</p>
+    <button id="zamknijPotw" onclick="zamknijPotw()">Zamknij</button>
+</div>
+
+    <script src="script.js" defer>
+    </script>
+
+</body>
+</html>
